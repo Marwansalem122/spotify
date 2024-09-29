@@ -1,9 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify/common/widget/button/basic_app_button.dart';
-import 'package:spotify/controllers/on_board_controller.dart';
+import 'package:spotify/controllers/choose_mode_controller.dart';
 import 'package:spotify/core/config/size_config.dart';
 import 'package:spotify/core/resourses/assets_manager.dart';
 import 'package:spotify/core/resourses/height_size_manager.dart';
@@ -72,7 +71,10 @@ class ChooseModePage extends StatelessWidget {
                                         .withOpacity(0.5),
                                     borderRadius: BorderRadius.circular(50)),
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    ChooseModeController()
+                                        .chooseDarkTheme(context);
+                                  },
                                   icon: SvgPicture.asset(AssetsManager.moon),
                                 ),
                               ),
@@ -104,7 +106,10 @@ class ChooseModePage extends StatelessWidget {
                                         .withOpacity(0.5),
                                     borderRadius: BorderRadius.circular(50)),
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    ChooseModeController()
+                                        .chooseLightTheme(context);
+                                  },
                                   icon: SvgPicture.asset(AssetsManager.sun),
                                 ),
                               ),
@@ -127,7 +132,8 @@ class ChooseModePage extends StatelessWidget {
                       height: SizeConfig.screenHeight! * HeightSizeManager.s80),
                   BasicAppButton(
                     onPressed: () {
-                      OnBoardController().navigateToChooseModePage(context);
+                      ChooseModeController()
+                          .navigateToSignInOrSignUpPage(context);
                     },
                     title: StringManager.continueText,
                     textColor: AppColor.titleColor,

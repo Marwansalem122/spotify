@@ -43,7 +43,7 @@ class OnBoardingPage extends StatelessWidget {
                     width: SizeConfig.screenWidth! * WidthSizeManager.s225,
                   ),
                   const Spacer(),
-                  const Text(StringManager.titleOnBoarding,
+                  const Text(StringManager.title,
                       style: TextStyle(
                           color: AppColor.titleColor,
                           fontSize: 18,

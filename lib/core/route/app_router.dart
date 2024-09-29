@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spotify/core/route/routes.dart';
+import 'package:spotify/presentation/auth/pages/signin.dart';
+import 'package:spotify/presentation/auth/pages/signin_or_signup.dart';
+import 'package:spotify/presentation/auth/pages/signup.dart';
 import 'package:spotify/presentation/choose_mode/pages/choose_mode.dart';
 import 'package:spotify/presentation/on_boarding/pages/on_boarding.dart';
 import 'package:spotify/presentation/splash/pages/splash.dart';
@@ -16,6 +19,12 @@ class AppRouter {
         return materialPageBuilder(const OnBoardingPage());
       case Routes.chooseModePage:
         return materialPageBuilder(const ChooseModePage());
+      case Routes.signInOrSignUpPage:
+        return materialPageBuilder(const SignInOrSignUpPage());
+      case Routes.signUpPage:
+        return materialPageBuilder(const SignUpPage());
+      case Routes.signInPage:
+        return materialPageBuilder(const SignInPage());
       // case Routes.playMusicScreen:
       //  if(argument is Map<String,dynamic>){
       //    return materialPageBuilder( PlayMusicScreen(data:argument ));

@@ -1,9 +1,15 @@
 class AssetsManager {
   static const String IMAGE_PATH = "assets/images";
   static const String VECTOR_PATH = "assets/vectors";
-  static const String ICONS_OPATH = "assets/icons";
+  static const String ICONS_PATH = "assets/icons";
   static const String formateSvg = ".svg";
   static const String formatePng = ".png";
+
+
+
+  // icons
+  static const String googleIcon = "${ICONS_PATH}/google$formatePng";
+  static const String macIcon = "${ICONS_PATH}/mac$formatePng";
   //Svg images
   static const String logo = "${VECTOR_PATH}/logo$formateSvg";
   static const String moon = "${VECTOR_PATH}/moon$formateSvg";
