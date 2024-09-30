@@ -12,8 +12,11 @@ import 'package:spotify/presentation/auth/widgets/custom_appbar_signin_and_signu
 import 'package:spotify/presentation/auth/widgets/custom_text_form_field.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+  SignUpPage({super.key});
 
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,18 +56,21 @@ class SignUpPage extends StatelessWidget {
               SizedBox(
                   height: SizeConfig.screenHeight! * HeightSizeManager.s32),
               CustomTextFormField(
+                controller: _fullNameController,
                 hintText: "Full Name",
                 isSecurse: false,
               ),
               SizedBox(
                   height: SizeConfig.screenHeight! * HeightSizeManager.s16),
               CustomTextFormField(
+                controller: _emailController,
                 hintText: "Enter Email",
                 isSecurse: false,
               ),
               SizedBox(
                   height: SizeConfig.screenHeight! * HeightSizeManager.s16),
               CustomTextFormField(
+                controller: _passwordController,
                 hintText: "Password",
                 isSecurse: true,
               ),
@@ -74,7 +80,13 @@ class SignUpPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: SizeConfig.screenWidth! * WidthSizeManager.s36),
                 child: BasicAppButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    SignupController().createAccount(
+                        context: context,
+                        fullName: _fullNameController.text,
+                        email: _emailController.text,
+                        password: _passwordController.text);
+                  },
                   title: 'Create Account',
                   textColor: Colors.white,
                 ),
@@ -106,9 +118,12 @@ class SignUpPage extends StatelessWidget {
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 IconButton(
                     onPressed: () {},
-                    icon: const Image(
-                        width: 50,
-                        image: AssetImage(AssetsManager.googleIcon))),
+                    icon: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: const Image(
+                          width: 50,
+                          image: AssetImage(AssetsManager.googleIcon)),
+                    )),
                 SizedBox(
                   width: SizeConfig.screenWidth! * WidthSizeManager.s30,
                 ),

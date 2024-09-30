@@ -6,4 +6,6 @@ class Routes {
    static const String signInOrSignUpPage = "/signInOrSignUpPage";
    static const String signUpPage = "/signUpPage";
    static const String signInPage = "/signInPage";
+
+   static const String homePage = "/homePage";
 }
