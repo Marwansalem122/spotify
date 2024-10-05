@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spotify/common/helpers/is_dark.dart';
-import 'package:spotify/controllers/signin_or_signup_controller.dart';
 import 'package:spotify/core/config/size_config.dart';
 import 'package:spotify/core/resourses/height_size_manager.dart';
 import 'package:spotify/core/resourses/width_size_manager.dart';

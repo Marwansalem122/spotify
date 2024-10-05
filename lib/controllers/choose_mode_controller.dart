@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spotify/common/helpers/extensions.dart';
+import 'package:spotify/common/helpers/navigate_extensions.dart';
 import 'package:spotify/core/route/routes.dart';
 import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart';
 

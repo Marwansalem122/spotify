@@ -14,4 +14,9 @@ class AppColor {
   static const Color subTitleColor = Color(0xFF2D2F34);
 
   static const Color moonAndSunIconColor = Color(0XFF30393C);
+
+  static const Color greyIconColor = Color(0XFF959595);
+  static const Color darkGreyIconColor = Color(0XFF555555);
+
+  static const Color backgroundCircle =Color(0XFFE6E6E6);
 }

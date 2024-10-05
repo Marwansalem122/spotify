@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/common/helpers/extensions.dart';
+import 'package:spotify/common/helpers/navigate_extensions.dart';
 import 'package:spotify/core/route/routes.dart';
 import 'package:spotify/data/models/auth/signin_user_req.dart';
 import 'package:spotify/domain/usecases/auth/signin_usecase.dart';
@@ -18,7 +18,7 @@ class SigninController {
     
       required String email,
       required String password}) async {
-    var result = await sl<SigninUsecase>().call(
+    var result = await sl<SigninUsecase>().call(params: 
         SigninUserReq( email: email, password: password));
     result.fold((l) {
       var snakbar = SnackBar(content: Text(l));

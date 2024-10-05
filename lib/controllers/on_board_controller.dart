@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:spotify/common/helpers/extensions.dart';
+import 'package:spotify/common/helpers/navigate_extensions.dart';
 import 'package:spotify/core/route/routes.dart';
 
 class OnBoardController {

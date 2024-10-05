@@ -26,6 +26,12 @@ class StringManager {
    static const String notAMember = "Not A Member? ";
 
    static const String registerNow = "Register Now";
+   static const String news = "News";
+   static const String video = "Video";
+
+   static const String artist = "Artist";
+   static const String podcast = "Podcast";
+   static const String nowPlaying = "Now Playing";
 
 
 }
