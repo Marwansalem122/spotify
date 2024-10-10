@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/helpers/is_dark.dart';
 import 'package:spotify/core/config/size_config.dart';
 import 'package:spotify/core/resourses/assets_manager.dart';
@@ -48,20 +47,28 @@ class CustomSongPlay extends StatelessWidget {
                         newPosition; // Update local position
                   }),
               // SizedBox(height: SizeConfig.screenHeight! * -0.001),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text(formatDuration(
-                    context.read<SongPlayerCubit>().songPosition)),
-                Text(formatDuration(
-                    context.read<SongPlayerCubit>().songDuration))
-              ]),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: SizeConfig.screenWidth! * WidthSizeManager.s14),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(formatDuration(
+                          context.read<SongPlayerCubit>().songPosition)),
+                      Text(formatDuration(
+                          context.read<SongPlayerCubit>().songDuration))
+                    ]),
+              ),
               SizedBox(
                   height: SizeConfig.screenHeight! * HeightSizeManager.s21),
-              Row(children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.read<SongPlayerCubit>().playPreviousSong();
+                  },
                   icon: context.isDark
-                      ? SvgPicture.asset(AssetsManager.previousLeftWhiteIcon)
-                      : SvgPicture.asset(AssetsManager.previousLeftBlackIcon),
+                      ? Image.asset(AssetsManager.previousWhiteIcon)
+                      : Image.asset(AssetsManager.previousBlackIcon),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -78,10 +85,12 @@ class CustomSongPlay extends StatelessWidget {
                               : Icons.play_arrow_outlined)),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.read<SongPlayerCubit>().playNextSong();
+                  },
                   icon: context.isDark
-                      ? SvgPicture.asset(AssetsManager.nextRightWhiteIcon)
-                      : SvgPicture.asset(AssetsManager.nextRightBlackIcon),
+                      ? Image.asset(AssetsManager.nextWhiteIcon)
+                      : Image.asset(AssetsManager.nextBlacIcon),
                 ),
               ])
             ],

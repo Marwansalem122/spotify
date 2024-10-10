@@ -33,5 +33,9 @@ class StringManager {
    static const String podcast = "Podcast";
    static const String nowPlaying = "Now Playing";
 
+   static const String favoriteSongs = 'FAVORITE SONGS';
+
+   static const String pleaseTryAgain = "Please Try Again";
+
 
 }

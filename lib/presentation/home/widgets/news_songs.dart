@@ -39,7 +39,7 @@ class NewsSongs extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              HomeController().navigateToSongPlayer(context, songs[index]);
+              HomeController().navigateToSongPlayer(context, songs[index],songs,index);
             },
             child: SizedBox(
               width: SizeConfig.screenWidth! * WidthSizeManager.s160,

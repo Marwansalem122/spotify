@@ -14,6 +14,8 @@ class WidthSizeManager {
   static const double s50 = 0.1111;
 
   static const double s60 = 0.1333;
+
+  static const double s70 = 0.1556;
   static const double s80 = 0.1778;
   static const double s90 = 0.2;
   static const double s112f5 = 0.25;

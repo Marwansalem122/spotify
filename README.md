@@ -37,3 +37,10 @@
     <img src="screen_shot\Screenshot_٢٠٢٤١٠٠٥-١٨٢٧٣٢.png" alt="home  dark screen" width="45%" />
    
 </p>
+<p align="center">
+ <img src="screen_shot\Screenshot_٢٠٢٤١٠١٠-١٩٤٠٥٢.png" alt="profile light 
+screen" width="45%" />
+    <img src="screen_shot\Screenshot_٢٠٢٤١٠١٠-١٩٤٢٠١.png" alt="home  dark 
+screen" width="45%" />
+   
+</p>

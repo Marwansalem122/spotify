@@ -6,5 +6,5 @@ extension SongModelX on SongModel {
       title: title!,
       artist: artist!,
       duration: duration!,
-      releaseDate: releaseDate!);
+      releaseDate: releaseDate!,isFavourit: isFavourit!,songId: songId!);
 }

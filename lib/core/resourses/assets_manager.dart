@@ -10,6 +10,10 @@ class AssetsManager {
   // icons
   static const String googleIcon = "$ICONS_PATH/google$formatePng";
   static const String macIcon = "$ICONS_PATH/mac$formatePng";
+  static const String nextWhiteIcon = "$ICONS_PATH/next$formatePng";
+  static const String nextBlacIcon = "$ICONS_PATH/next-button$formatePng";
+  static const String previousWhiteIcon = "$ICONS_PATH/previous-white$formatePng";
+  static const String previousBlackIcon = "$ICONS_PATH/previous-black$formatePng";
   //Svg images
   static const String logo = "$VECTOR_PATH/logo$formateSvg";
   static const String moon = "$VECTOR_PATH/moon$formateSvg";
@@ -17,10 +21,10 @@ class AssetsManager {
   static const String topPattern = "$VECTOR_PATH/top_pattern$formateSvg";
   static const String bottomPattern = "$VECTOR_PATH/bottom_pattern$formateSvg";
   static const String homeTopCard = "$VECTOR_PATH/home_top_card$formateSvg";
-  static const String nextRightBlackIcon = "$VECTOR_PATH/next-button$formateSvg";
-  static const String nextRightWhiteIcon = "$VECTOR_PATH/next$formateSvg";
-  static const String previousLeftWhiteIcon = "$VECTOR_PATH/previous-white$formateSvg";
-  static const String previousLeftBlackIcon = "$VECTOR_PATH/previous-black$formateSvg";
+  // static const String nextRightBlackIcon = "$VECTOR_PATH/next-button$formateSvg";
+  // static const String nextRightWhiteIcon = "$VECTOR_PATH/next$formateSvg";
+  // static const String previousLeftWhiteIcon = "$VECTOR_PATH/previous-white$formateSvg";
+  // static const String previousLeftBlackIcon = "$VECTOR_PATH/previous-black$formateSvg";
 
 
 

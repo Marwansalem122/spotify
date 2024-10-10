@@ -6,7 +6,7 @@ import 'package:spotify/core/route/routes.dart';
 import 'package:spotify/core/theme/app_theme.dart';
 import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:spotify/presentation/home/bloc/news_songs_cubit.dart';
-import 'package:spotify/presentation/home/bloc/play_list_cubit.dart';
+import 'package:spotify/presentation/profile/bloc/profile_info_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,12 +20,9 @@ class MyApp extends StatelessWidget {
           create: (_) => ThemeCubit(),
         ),
         BlocProvider(
-          create: (_) => NewsSongsCubit()..getNewsSongs(),
+          create: (_) => NewsSongsCubit()..getNewsSongs()
         ),
-        BlocProvider(
-          create: (_) => PlayListCubit()..playList(),
-        ),
-       
+      BlocProvider(create: (_)=>ProfileInfoCubit()..getUser()),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, mode) {

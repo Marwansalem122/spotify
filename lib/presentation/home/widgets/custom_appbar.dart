@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/helpers/is_dark.dart';
+import 'package:spotify/controllers/home_controller.dart';
 import 'package:spotify/core/config/size_config.dart';
 import 'package:spotify/core/resourses/assets_manager.dart';
 import 'package:spotify/core/resourses/width_size_manager.dart';
@@ -24,9 +25,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.more_vert,
-              color: context.isDark ? AppColor.grey : AppColor.lightBackground),
+          onPressed: () {
+            HomeController().navigateToProfilePage(context);
+          },
+          icon: Icon(Icons.person,
+              color:
+                  context.isDark ? AppColor.grey : AppColor.darkGreyIconColor),
         ),
       ],
     );

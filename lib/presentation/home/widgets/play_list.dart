@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify/common/helpers/is_dark.dart';
+import 'package:spotify/common/widget/favorite_button/favorite_button.dart';
 import 'package:spotify/controllers/home_controller.dart';
 import 'package:spotify/core/config/size_config.dart';
 import 'package:spotify/core/resourses/height_size_manager.dart';
@@ -15,43 +16,46 @@ class PlayList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PlayListCubit, PlayListState>(builder: (context, state) {
-      if (state is PlayListLoadingState) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      } else if (state is PlayListLoadedState) {
-        return Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! * WidthSizeManager.s22f5,
-              vertical: SizeConfig.screenHeight! * HeightSizeManager.s45),
-          child: Column(
-            children: [
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Playlist',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Text(
-                    'See More',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xffC6C6C6)),
-                  ),
-                ],
-              ),
-              SizedBox(
-                  height: SizeConfig.screenHeight! * HeightSizeManager.s21),
-              _songs(state.songs)
-            ],
-          ),
-        );
-      }
-      return Container();
-    });
+    return BlocProvider(
+      create: (context) => PlayListCubit()..playList(),
+      child: BlocBuilder<PlayListCubit, PlayListState>(builder: (context, state) {
+        if (state is PlayListLoadingState) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (state is PlayListLoadedState) {
+          return Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: SizeConfig.screenWidth! * WidthSizeManager.s22f5,
+                vertical: SizeConfig.screenHeight! * HeightSizeManager.s45),
+            child: Column(
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Playlist',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    Text(
+                      'See More',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xffC6C6C6)),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                    height: SizeConfig.screenHeight! * HeightSizeManager.s21),
+                _songs(state.songs)
+              ],
+            ),
+          );
+        }
+        return Container();
+      }),
+    );
   }
 }
 
@@ -61,7 +65,8 @@ Widget _songs(List<SongEntity> songs) {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            HomeController().navigateToSongPlayer(context, songs[index]);
+            HomeController()
+                .navigateToSongPlayer(context, songs[index], songs, index);
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,16 +119,9 @@ Widget _songs(List<SongEntity> songs) {
                       .replaceAll('.', ':')),
                   SizedBox(
                       width: SizeConfig.screenWidth! * WidthSizeManager.s20),
-                  // FavoriteButton(
-                  //   songEntity: songs[index],
-                  // )
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.favorite_border_outlined,
-                        size: 25,
-                        color: AppColor.darkGrey,
-                      ))
+                  FavoriteButton(
+                    songEntity: songs[index],
+                  )
                 ],
               )
             ],

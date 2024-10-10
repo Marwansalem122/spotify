@@ -4,6 +4,7 @@ class AppColor {
   static const Color primary = Color(0XFF42CB3C);
   static const Color primaryDark = Color(0xff006400);
   static const Color lightBackground = Color(0XFFF2F2F2);
+  static const Color whiteColor = Colors.white;
   static const Color darkBackground = Color(0XFF0D0C0C);
   static const Color grey = Color(0XFFBEBEBE);
   static const Color darkGrey = Color(0XFF343434);
@@ -19,4 +20,5 @@ class AppColor {
   static const Color darkGreyIconColor = Color(0XFF555555);
 
   static const Color backgroundCircle =Color(0XFFE6E6E6);
+  static const Color darkProfileColor = Color(0XFF2C2B2B);
 }

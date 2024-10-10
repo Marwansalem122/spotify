@@ -8,16 +8,16 @@ class SplashController {
      User? user = FirebaseAuth.instance.currentUser;
     Future.delayed(const Duration(seconds: 2), () {
        
- context.pushReplacementNamed(Routes.onBoardingPage);
-
-//   if (user != null) {
-//     // User is signed in
-//  context.pushReplacementNamed(Routes.homePage);
-//   } else {
-//     // No user is signed in
 //  context.pushReplacementNamed(Routes.onBoardingPage);
 
-//   }
+  if (user != null) {
+    // User is signed in
+ context.pushReplacementNamed(Routes.homePage);
+  } else {
+    // No user is signed in
+ context.pushReplacementNamed(Routes.onBoardingPage);
+
+  }
     });
   }
 }

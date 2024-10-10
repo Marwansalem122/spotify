@@ -4,8 +4,13 @@ import 'package:spotify/core/route/routes.dart';
 import 'package:spotify/domain/entities/song/song.dart';
 
 class HomeController {
-  void navigateToSongPlayer(BuildContext context,SongEntity song) {
-    context.pushNamed(Routes.songPlayerPage,arguments: song);
+  void navigateToSongPlayer(BuildContext context, SongEntity song,
+      List<SongEntity> songsUrl, int songIndex) {
+    context.pushNamed(Routes.songPlayerPage,
+        arguments: [song, songsUrl, songIndex]);
   }
-  
+
+  void navigateToProfilePage(BuildContext context) {
+    context.pushNamed(Routes.profilePage);
+  }
 }
