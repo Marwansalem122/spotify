@@ -1,5 +1,17 @@
 # spotify
 
+## Diagrams 
+# class Diagram
+<p>
+    <img src="screen_shot\class diagram.png" alt="light splashview" width="45%" />
+
+</p>
+
+# usecase Diagram
+<p>
+    <img src="screen_shot\use-case-diagram-spotiffy-premium.png" alt="light splashview" width="45%" />
+
+</p>
 
 ## Screens
 <p align="center">
